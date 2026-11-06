@@ -21,8 +21,7 @@
     .section-title { text-align: center; font-size: 1.8rem; color: #0077b6; margin-bottom: 30px; position: relative; }
     .section-title::after { content: ""; display: block; width: 50px; height: 3px; background: #00b4d8; margin: 10px auto 0; border-radius: 2px; }
 
-   .spots-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 25px; margin-bottom: 50px; }
-    /* कार्डलाई लिङ्क जस्तो बनाउने */
+    .spots-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 25px; margin-bottom: 50px; }
     .spot-card {
       background: #ffffff; border-radius: 12px; overflow: hidden;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06); display: flex; flex-direction: column;
@@ -35,7 +34,6 @@
     .spot-title { font-size: 1.3rem; margin-bottom: 10px; color: #1a1a1a; }
     .spot-text { font-size: 0.95rem; color: #555555; margin-bottom: auto; }
 
-    /* Left-aligned clickable indicator */
     .spot-link-btn {
       display: inline-block;
       text-align: right;
@@ -49,6 +47,222 @@
     .info-box h3 { font-size: 1.1rem; color: #0077b6; margin-bottom: 8px; }
     .info-list { list-style: none; font-size: 0.95rem; }
     .info-list li { margin-bottom: 6px; }
+
+    /* ==========================================
+       モダン・トラベルスナップ（参加者の声）スタイル
+    ========================================== */
+    .reviews-section {
+      margin-top: 60px;
+      margin-bottom: 40px;
+    }
+    .reviews-desc {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    /* 年別フィルターピルタブ */
+    .year-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 35px;
+      flex-wrap: wrap;
+    }
+    .year-tab-btn {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      color: #475569;
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 9px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+    .year-tab-btn:hover {
+      background: #f0fdfa;
+      border-color: #00b4d8;
+      color: #0077b6;
+      transform: translateY(-2px);
+    }
+    .year-tab-btn.active {
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 4px 14px rgba(0, 119, 182, 0.3);
+      transform: translateY(-2px);
+    }
+    .tab-badge {
+      font-size: 0.72rem;
+      background: rgba(0, 0, 0, 0.07);
+      padding: 2px 7px;
+      border-radius: 12px;
+    }
+    .year-tab-btn.active .tab-badge {
+      background: rgba(255, 255, 255, 0.28);
+      color: #ffffff;
+    }
+
+    /* レビューグリッド */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
+    }
+
+    /* スナップショット・レビューカード */
+    .review-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 26px;
+      box-shadow: 0 6px 20px rgba(0, 80, 130, 0.06);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .review-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(0, 119, 182, 0.16);
+      border-color: #90e0ef;
+    }
+    
+    /* 背景の引用符アクセント */
+    .review-card::before {
+      content: "“";
+      position: absolute;
+      top: -10px;
+      right: 18px;
+      font-size: 5.5rem;
+      font-family: Georgia, serif;
+      color: #f1f5f9;
+      line-height: 1;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ユーザー情報＆スナップ画像レイアウト */
+    .review-header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      z-index: 1;
+    }
+    .review-user-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .review-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0077b6, #48cae4);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 3px 8px rgba(0, 119, 182, 0.25);
+      border: 2px solid #ffffff;
+    }
+    .review-user-details {
+      display: flex;
+      flex-direction: column;
+    }
+    .review-author {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .review-department {
+      font-size: 0.75rem;
+      color: #64748b;
+    }
+
+    /* 右上のトラベルミニスナップ写真 */
+    .review-mini-snap {
+      width: 70px;
+      height: 70px;
+      border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+      border: 2px solid #ffffff;
+      transition: transform 0.3s ease;
+    }
+    .review-card:hover .review-mini-snap {
+      transform: rotate(3deg) scale(1.05);
+    }
+    .review-mini-snap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* スポットタグ & 星評価 */
+    .review-subline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      z-index: 1;
+    }
+    .review-spot-pill {
+      font-size: 0.76rem;
+      color: #0077b6;
+      background: #e0f2fe;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .review-rating-stars {
+      color: #f59e0b;
+      font-size: 0.88rem;
+      letter-spacing: 2px;
+    }
+
+    /* 感想本文 */
+    .review-comment {
+      font-size: 0.92rem;
+      color: #334155;
+      line-height: 1.75;
+      z-index: 1;
+      margin: 0;
+      background: #f8fafc;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border-left: 3px solid #00b4d8;
+    }
+
+    /* アニメーション */
+    .fade-in {
+      animation: modernFadeIn 0.35s ease forwards;
+    }
+    @keyframes modernFadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .spots-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .year-tabs { gap: 8px; }
+      .year-tab-btn { padding: 7px 14px; font-size: 0.82rem; }
+    }
 
     footer { text-align: center; padding: 25px 20px; background: #1e293b; color: #94a3b8; font-size: 0.85rem; }
   </style>
@@ -106,8 +320,7 @@
           <span class="spot-tag">世界文化遺産</span>
           <div class="spot-body">
             <img src="image/image3.jpg" alt="三保の松原" style="width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:10px;">
-           <!-- तेस्रो कार्डको शीर्षक -->
- <h3 class="spot-title">三保の松原</h3>
+            <h3 class="spot-title">三保の松原</h3>
             <p class="spot-text">青い海と緑の松林、富士山の絶景名所。「羽衣伝説」の舞台を散策。</p>
             <span class="spot-link-btn">Clickして詳細へ ➔</span>
           </div>
@@ -118,12 +331,191 @@
           <span class="spot-tag">国宝・パワースポット</span>
           <div class="spot-body">
             <img src="image/image4.jpg" alt="久能山東照宮" style="width:100%; height:160px; object-fit:cover; border-radius:8px; margin-bottom:10px;">
-           <!-- चौथो कार्डको शीर्षक -->
- <h3 class="spot-title">久能山東照宮</h3>
+            <h3 class="spot-title">久能山東照宮</h3>
             <p class="spot-text">徳川家康公が眠る国宝の社殿。歴史とパワーあふれる名所を見学。</p>
             <span class="spot-link-btn">Clickして詳細へ ➔</span>
           </div>
         </a>
+
+      </div>
+    </section>
+
+    <!-- ==========================================
+         旅の思い出・参加者の声セクション（モダン版）
+    ========================================== -->
+    <section class="reviews-section">
+      <h2 class="section-title">旅の思い出・参加者の声</h2>
+      <p class="reviews-desc">実際に旅行に参加した皆さんの感想をご紹介します。</p>
+
+      <!-- 年度別タブ切り替え -->
+      <div class="year-tabs">
+        <button class="year-tab-btn active" onclick="filterReviews('2026', this)">
+          <span>2026年</span><span class="tab-badge">2件</span>
+        </button>
+        <button class="year-tab-btn" onclick="filterReviews('2025', this)">
+          <span>2025年</span><span class="tab-badge">2件</span>
+        </button>
+        <button class="year-tab-btn" onclick="filterReviews('2024', this)">
+          <span>2024年</span><span class="tab-badge">2件</span>
+        </button>
+        <button class="year-tab-btn" onclick="filterReviews('2023', this)">
+          <span>2023年</span><span class="tab-badge">1件</span>
+        </button>
+      </div>
+
+      <!-- レビューカード表示エリア -->
+      <div class="reviews-grid" id="reviewsGrid">
+
+        <!-- ===== 2026年度 ===== -->
+        <article class="review-card" data-year="2026">
+          <div class="review-header-flex">
+            <div class="review-user-box">
+              <div class="review-avatar">KT</div>
+              <div class="review-user-details">
+                <span class="review-author">K. タマン さん</span>
+                <span class="review-department">国際ITビジネス科 留学生</span>
+              </div>
+            </div>
+            <div class="review-mini-snap">
+              <img src="image/image2.jpg" alt="駿河湾の旅写真">
+            </div>
+          </div>
+          <div class="review-subline">
+            <span class="review-spot-pill">🚢 駿河湾クルーズ & はとばキッチン</span>
+          </div>
+          <p class="review-comment">
+            初めて乗ったクルーズ船から見た富士山が雄大で感動しました！潮風が心地よく、はとばキッチンのバイキングも海鮮が新鮮で大満足の一日でした。
+          </p>
+        </article>
+
+        <article class="review-card" data-year="2026">
+          <div class="review-header-flex">
+            <div class="review-user-box">
+              <div class="review-avatar">AM</div>
+              <div class="review-user-details">
+                <span class="review-author">A. マライ さん</span>
+                <span class="review-department">情報エンジニア科 留学生</span>
+              </div>
+            </div>
+            <div class="review-mini-snap">
+              <img src="image/image4.jpg" alt="東照宮の旅写真">
+            </div>
+          </div>
+          <div class="review-subline">
+            <span class="review-spot-pill">⛩️ 久能山東照宮 & 三保の松原</span>
+          </div>
+          <p class="review-comment">
+            羽衣の松と海の景色が美しかったです。久能山東照宮の豪華絢爛な社殿と歴史の重みに圧倒され、日本の伝統文化を深く学べた最高の旅でした。
+          </p>
+        </article>
+
+        <!-- ===== 2025年度 ===== -->
+        <article class="review-card" data-year="2025" style="display: none;">
+          <div class="review-header-flex">
+            <div class="review-user-box">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #023e8a, #0077b6);">SY</div>
+              <div class="review-user-details">
+                <span class="review-author">S. 山田 さん</span>
+                <span class="review-department">パティシエ科 1年</span>
+              </div>
+            </div>
+            <div class="review-mini-snap">
+              <img src="image/image1.jpg" alt="はとばキッチンの旅写真">
+            </div>
+          </div>
+          <div class="review-subline">
+            <span class="review-spot-pill">🍽️ はとばキッチン & 清水港</span>
+          </div>
+          <p class="review-comment">
+            バイキングで静岡のスイーツや新鮮な食材をたくさん楽しめました。他クラスの仲間とも自然に会話が弾み、とても良いリフレッシュになりました。
+          </p>
+        </article>
+
+        <article class="review-card" data-year="2025" style="display: none;">
+          <div class="review-header-flex">
+            <div class="review-user-box">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #023e8a, #0077b6);">TN</div>
+              <div class="review-user-details">
+                <span class="review-author">T. 中村 さん</span>
+                <span class="review-department">ITビジネス科 2年</span>
+              </div>
+            </div>
+            <div class="review-mini-snap">
+              <img src="image/image2.jpg" alt="クルーズ船の旅写真">
+            </div>
+          </div>
+          <div class="review-subline">
+            <span class="review-spot-pill">🌊 駿河湾クルーズ</span>
+          </div>
+          <p class="review-comment">
+            秋晴れの心地よい風を感じながら、海上から望むパノラマビューを満喫しました。デッキで友達と撮った記念写真は一生の思い出です。
+          </p>
+        </article>
+
+        <!-- ===== 2024年度 ===== -->
+        <article class="review-card" data-year="2024" style="display: none;">
+          <div class="review-header-flex">
+            <div class="review-user-box">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #0096c7, #48cae4);">RH</div>
+              <div class="review-user-details">
+                <span class="review-author">R. 長谷川 さん</span>
+                <span class="review-department">情報システム科 2年</span>
+              </div>
+            </div>
+            <div class="review-mini-snap">
+              <img src="image/image4.jpg" alt="久能山東照宮の旅写真">
+            </div>
+          </div>
+          <div class="review-subline">
+            <span class="review-spot-pill">⛩️ 久能山東照宮</span>
+          </div>
+          <p class="review-comment">
+            石段を上りきった先にある国宝の社殿は色彩が豊かで圧巻でした。高台から見下ろす駿河湾の青さも非常に美しく、充実した見学になりました。
+          </p>
+        </article>
+
+        <article class="review-card" data-year="2024" style="display: none;">
+          <div class="review-header-flex">
+            <div class="review-user-box">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #0096c7, #48cae4);">MI</div>
+              <div class="review-user-details">
+                <span class="review-author">M. 石川 さん</span>
+                <span class="review-department">パティシエ科 2年</span>
+              </div>
+            </div>
+            <div class="review-mini-snap">
+              <img src="image/image3.jpg" alt="三保の松原の旅写真">
+            </div>
+          </div>
+          <div class="review-subline">
+            <span class="review-spot-pill">🌲 三保の松原</span>
+          </div>
+          <p class="review-comment">
+            青空と緑の松林、そして雪化粧が始まった富士山が同時に見られて最高でした。名物の安倍川もちも美味しく、忘れられない思い出になりました。
+          </p>
+        </article>
+
+        <!-- ===== 2023年度 ===== -->
+        <article class="review-card" data-year="2023" style="display: none;">
+          <div class="review-header-flex">
+            <div class="review-user-box">
+              <div class="review-avatar" style="background: linear-gradient(135deg, #0077b6, #90e0ef);">KO</div>
+              <div class="review-user-details">
+                <span class="review-author">K. 小林 さん</span>
+                <span class="review-department">IT学科 卒業生</span>
+              </div>
+            </div>
+            <div class="review-mini-snap">
+              <img src="image/image2.jpg" alt="研修旅行全体写真">
+            </div>
+          </div>
+          <div class="review-subline">
+            <span class="review-spot-pill">✨ 清水港・駿河湾全域</span>
+          </div>
+          <p class="review-comment">
+            先生方や留学生の仲間と笑顔あふれる楽しい1日を過ごせました。バスの移動中も終始にぎやかで、学生生活の宝物になる大切な思い出です。
+          </p>
+        </article>
 
       </div>
     </section>
@@ -134,6 +526,26 @@
     <p>※バス走行中は安全のため必ずシートベルトの着用をお願いいたします。</p>
     <p style="margin-top: 4px;">企画手配：株式会社 第一観光</p>
   </footer>
+
+  <script>
+    function filterReviews(selectedYear, targetBtn) {
+      const buttons = document.querySelectorAll('.year-tab-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      targetBtn.classList.add('active');
+
+      const cards = document.querySelectorAll('.review-card');
+      cards.forEach(card => {
+        if (card.getAttribute('data-year') === selectedYear) {
+          card.style.display = 'flex';
+          card.classList.remove('fade-in');
+          void card.offsetWidth;
+          card.classList.add('fade-in');
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
